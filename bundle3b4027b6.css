@@ -188,6 +188,7 @@ abbr {
 	margin: 0;
 	padding: 0;
 	user-select: none;
+	box-sizing: border-box;
 }
 
 span.svg,
@@ -233,12 +234,6 @@ main {
 		#0019de,
 		#0000ff
 	);
-	overflow-y: scroll;
-}
-
-main:hover {
-	outline: 2px solid white;
-	outline-offset: -1rem;
 }
 
 /* width */
@@ -271,7 +266,7 @@ section.ribbon {
 	align-items: center;
 	justify-content: center;
 	padding: 5px;
-	height: 25px;
+	height: 30px;
 }
 
 section.ribbon > p {
@@ -296,7 +291,7 @@ div.menu {
 }
 
 nav {
-	padding: 0.5rem 1rem;
+	padding: 0.8rem 1rem;
 	display: flex;
 	align-items: center;
 	gap: 1rem;
@@ -400,6 +395,76 @@ section.tab {
 	height: 100%;
 }
 
+section#home {
+	scroll-snap-type: Y mandatory;
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
+
+section#home > * {
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	overflow: hidden;
+	height: 100%;
+}
+
+.welcome-page {
+    max-height: 540px;
+	display: grid;
+	grid-template-columns: 1fr 480px;
+	grid-template-rows: 1fr;
+	padding: 2rem;
+}
+
+.welcome-page h1 {
+	font-size: 4rem;
+	line-height: 1;
+}
+
+.welcome-page p {
+	font-size: 1.2em;
+	width: 80%;
+	margin: 20px 0;
+	max-width: 80%;
+}
+
+.follower-effect {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 1rem;
+}
+
+.follower-effect > * {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.follower-effect span.svg {
+	font-size: 4rem;
+}
+
+span.title {
+	font-size: 0.8rem;
+}
+
+span.svg + span.stats {
+	display: inline-block;
+	font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 2.5em;
+	}
+
+	p {
+		font-size: 1em;
+	}
+}
 
 footer {
 	display: flex;
