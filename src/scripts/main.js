@@ -1,15 +1,17 @@
-import myImage from '../assets/it-department.png';
+import it_logo from '../assets/it-club-logo.png';
 import setFavicon from './favicon';
+import toggleNav from './toggleNav';
+import openTab from './openTab';
+setFavicon(it_logo, 'png');
 
-const { log } = console;
-log('Namaste Nepal');
+const tabBtns = document.querySelectorAll('button.switch-tab');
+tabBtns.forEach((btn) => {
+	btn.addEventListener('click', (e) => {
+		openTab(btn.getAttribute('data-tab'));
+	});
+});
 
-const div = document.createElement('div');
-const h1 = document.createElement('h1');
-h1.innerText = `Hey there! Let's start coding...`;
-const img = document.createElement('img');
-img.src = myImage;
-
-div.append(h1, img);
-document.body.appendChild(div);
-setFavicon(myImage, 'png');
+window.onload = () => {
+	document.querySelector('.menu').addEventListener('click', toggleNav);
+    openTab('home');
+};

@@ -1,27 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+
+span.svg,
+span.svg > svg {
+	height: 1em;
+	width: 1em;
+	fill: currentColor;
+}
+
 body {
-	min-height: 100vh;
-	display: flex;
-	background-color: #f4f4f4;
+	height: 100%;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
-div {
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border: 2px solid #4677d5;
-	padding: 2rem;
-	box-shadow: 2px 2px 10px black;
-	background-color: #ffffff;
+.root-cont {
+	display: grid;
+	grid-template-rows: 80px 1fr auto;
+	height: 100vh;
 }
 
-h1 {
-	text-align: center;
-	color: #4677d5;
+header {
+	background-color: #1a1a1a;
 }
 
-img {
-	width: 150px;
-	height: 150px;
-	border-bottom: 2px solid #4677d5;
+main {
+	min-height: 530px;
+	padding: 20px;
+	overflow-y: auto;
+	background-image: linear-gradient(
+		to bottom,
+		#1a1a1a,
+		#1c1b23,
+		#1e1d2d,
+		#201e37,
+		#211f41,
+		#212154,
+		#202267,
+		#1d237a,
+		#14239b,
+		#0320bc,
+		#0019de,
+		#0000ff
+	);
+	overflow-y: scroll;
+}
+
+main:hover {
+	outline: 2px solid white;
+	outline-offset: -1rem;
 }
