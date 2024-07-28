@@ -4,7 +4,7 @@ section.ribbon {
 	align-items: center;
 	justify-content: center;
 	padding: 5px;
-	height: 25px;
+	height: 30px;
 }
 
 section.ribbon > p {

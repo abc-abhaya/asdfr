@@ -1,7 +1,9 @@
 import it_logo from '../assets/it-club-logo.png';
 import setFavicon from './favicon';
-import toggleNav from './toggleNav';
+import typeWriter from './welcomeEffect';
 import openTab from './openTab';
+import increaseCount from './increaseCount';
+import toggleNav from './toggleNav';
 setFavicon(it_logo, 'png');
 
 const tabBtns = document.querySelectorAll('button.switch-tab');
@@ -13,5 +15,7 @@ tabBtns.forEach((btn) => {
 
 window.onload = () => {
 	document.querySelector('.menu').addEventListener('click', toggleNav);
-    openTab('home');
+	typeWriter();
+	openTab('home');
+	increaseCount();
 };
